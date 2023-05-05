@@ -355,7 +355,7 @@ def _is_text_file_a_json(
             file_text = file_content.decode()
         file.seek(0)
     elif filename is not None:
-        with open(filename) as f:
+        with open(filename, encoding='utf-8') as f:
             file_text = f.read()
 
     return re.match(LIST_OF_DICTS_PATTERN, file_text) is not None
